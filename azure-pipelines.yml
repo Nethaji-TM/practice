@@ -15,6 +15,8 @@ steps:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
 
+- script: git fetch --all
+- script: git checkout $(Build.SourceBranchName)
 - script: |
     npm install
     npm run build
