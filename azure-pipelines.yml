@@ -17,6 +17,8 @@ steps:
 
 - script: git fetch --all
 - script: git checkout $(Build.SourceBranchName)
+- script: npm cache clean --force
+- script: rm -rf node_modules
 - script: |
     npm install
     npm run build
